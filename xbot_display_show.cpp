@@ -22,13 +22,13 @@ void xbot_display_show::init()
   disp->setTextSize(2);
   disp->print("boot");
   disp->display();
-  delay(500);
+  delay(250);
   disp->print(".");
   disp->display();
-  delay(500);
+  delay(250);
   disp->print(".");
   disp->display();
-  delay(500);
+  delay(250);
   disp->print(".");
   disp->display();
   delay(250);
@@ -135,7 +135,7 @@ void xbot_display_show::update(xbot_display_data* data)
   
   if(modeChanged)
   {
-    delay(500);
+    delay(700);
   }
 }
 void xbot_display_show::changeMode()
