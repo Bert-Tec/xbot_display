@@ -5,7 +5,7 @@ You can use an Arduino Uno for testing. For productive you should use someting s
 
 For use of ESP-01 please enable it in the xbot_display.ino file, because of custom I2C pins.
 
-<h3>Dependencies (Arduino libraries):<h3>
+<h3>Dependencies (Arduino libraries):</h3>
 <ul>
 <li>Adafruit_GFX</li>
 <li>Adafruit_SSD1306</li>
