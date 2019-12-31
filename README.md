@@ -48,6 +48,8 @@ There are three different display mods at the moment. You can switch between the
 </ul>
 
 <h3>Future Features</h3>
-* Trip meter
-* unlock speed
-* view aditional informations
+<ul>
+<li>Trip meter</li>
+<li>unlock speed</li>
+<li>view aditional informations</li>
+</ul>
