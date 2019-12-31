@@ -5,6 +5,9 @@ You can use an Arduino Uno for testing. For productive you should use someting s
 
 For use of ESP-01 please enable it in the xbot_display.ino file, because of custom I2C pins.
 
+![V1](/img/v1_1.jpg)
+![V1](/img/v1_3.jpg)
+
 <h3>Dependencies (Arduino libraries):</h3>
 <ul>
 <li>Adafruit_GFX</li>
@@ -17,7 +20,7 @@ For use of ESP-01 please enable it in the xbot_display.ino file, because of cust
 <li>1.3"(0.96"works also) OLED display (Yellow/Blue or White)</li>
 <li>Arduino pro mini 5V OR ESP-01(s) AND 5V to 3.3V converter</li>
 <li>Cables, isolation tape and a small resistor (like 220R)</li>
-<li>3D printed spacer(see 3D folder) or mod a housing on your own</li>
+<li>3D printed spacer(see 3D folder, will be improved soon) or mod a housing on your own</li>
 <li>optional some hot glue to hold stuff in place</li>
 </ul>
 
@@ -43,3 +46,8 @@ There are three different display mods at the moment. You can switch between the
 <li>Throttle overview (Here you can test and visualize throttle and break)</li>
 <li>OFF (Displays blank screen)</li>
 </ul>
+
+<h3>Future Features</h3>
+* Trip meter
+* unlock speed
+* view aditional informations
