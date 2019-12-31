@@ -12,6 +12,15 @@ For use of ESP-01 please enable it in the xbot_display.ino file, because of cust
 <li>Wire</li>
 </ul>
 
+<h3>Hardware needed:</h3>
+<ul>
+<li>1.3"(0.96"works also) OLED display (Yellow/Blue or White)</li>
+<li>Arduino pro mini 5V OR ESP-01(s) AND 5V to 3.3V converter</li>
+<li>Cables, isolation tape and a small resistor (like 220R)</li>
+<li>3D printed spacer(see 3D folder) or mod a housing on your own</li>
+<li>optional some hot glue to hold stuff in place</li>
+</ul>
+
 <h3>How to connect:</h3>
 
 You need to solder three wires to the dashboards lower pins. Power(5V) to the + pin, Ground to the - pin and the serial line to the tr pin. 
