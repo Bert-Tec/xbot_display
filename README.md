@@ -47,7 +47,7 @@ There are three different display mods at the moment. You can switch between the
 <li>OFF (Displays blank screen)</li>
 </ul>
 
-<h3>Future Features</h3>
+<h3>Future Features:</h3>
 <ul>
 <li>Trip meter</li>
 <li>unlock speed</li>
