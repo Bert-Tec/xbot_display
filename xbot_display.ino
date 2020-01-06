@@ -16,6 +16,7 @@ bool maxSpeed = false;
 
 void setup() 
 {
+  // delete the whole condition if not using esp
   if(ESP_01)
   {
      Wire.begin(0,2); 
@@ -42,11 +43,12 @@ void loop()
           case 0x07: size = 0x07 + 4;break;
           case 0x09: size = 0x09 + 4;break;
           case 0x0B: size = 0x0B + 4;break;
+          default: break;
         }
-        //int size = 20;
+
         byte readData[size];
 
-        for(int i = 0, i < size, i++)
+        for(int i = 0; i < size; i++)
         {
           readData[i] = Serial.read();        
         }
@@ -117,7 +119,7 @@ void loop()
 
 void sendData(byte * data, int len)
 {
-  Serial.write()
+  Serial.write(data,len);
 }
 
 uint16_t calculateChecksum(byte *data)
@@ -132,7 +134,3 @@ uint16_t calculateChecksum(byte *data)
 	sum ^= 0xFFFF;
 	return sum;
 }
-
-0000 0010 0001 0010
-1111 1111 1111 1111
-1111 1101 1110 1101
