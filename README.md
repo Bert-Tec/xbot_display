@@ -39,8 +39,8 @@ Now turn on and test it.
 <h3>How to Use:</h3>
 The display and Arduino/ESP only gets power when the scooter is turned on.
 <br>
-There are three different display mods at the moment. You can switch between them by pressing full throttle for 1 second at speed of 0.
 You can switch to max. speed of 30 kmh by holding break and throttle for 7 seconds and at speed of 0. For reset hold break and throttle for 2 seconds and at speed of 0.
+There are three different display mods at the moment. You can switch between them by pressing full throttle for 1 second at speed of 0:
 
 <ul>
 <li>Home (Displays throttle and break values in % on top left, Battery % in top right, speed in km?h in the center, left point is eco mode on/off right point is light on/off)</li>
