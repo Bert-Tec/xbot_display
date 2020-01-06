@@ -35,13 +35,6 @@ void xbot_display_show::init()
 }
 void xbot_display_show::update(xbot_display_data* data)
 {
-  bool modeChanged = false;
-  if(data->speed_ == 0 && data->throttle_ == 100 && data->break_ == 100)
-  {
-    changeMode();
-    modeChanged = true;
-  }
-  
   disp->clearDisplay();
 
   switch(actual_mode_)
@@ -84,6 +77,11 @@ void xbot_display_show::update(xbot_display_data* data)
               disp->drawCircle(4,20,4,WHITE);
             if(data->eco_)
               disp->fillCircle(4,20,4,WHITE);
+            //unlockedSpeed 
+            if(!data->unlockedSpeed_)
+              disp->drawCircle(59,20,4,WHITE);
+            if(data->unlockedSpeed_)
+              disp->fillCircle(59,20,4,WHITE);
             //speed
             disp->setTextSize(5);
             if(data->speed_ > 9.999)
@@ -132,11 +130,6 @@ void xbot_display_show::update(xbot_display_data* data)
   }
 
   disp->display();
-  
-  if(modeChanged)
-  {
-    delay(700);
-  }
 }
 void xbot_display_show::changeMode()
 {

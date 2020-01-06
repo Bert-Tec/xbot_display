@@ -5,6 +5,14 @@ xbot_display_show display;
 xbot_display_data scooterData;
 
 bool ESP_01 = true;
+unsigned long unlockSpeedTime = 7000;
+unsigned long resetSpeedTime = 2000;
+unsigned long changeSpeedTimer = 0;
+unsigned long changeSpeedTime = unlockSpeedTime;
+unsigned long changeModeTimer = 0;
+unsigned long changeModeTime = 1000;
+
+bool maxSpeed = false;
 
 void setup() 
 {
@@ -28,20 +36,103 @@ void loop()
       Serial.read();
       if(Serial.peek() == 0x07 || Serial.peek() == 0x09 || Serial.peek() == 0x0B)
       {
-        int size =  Serial.read()+2;
+        int size = 0;
+        switch (Serial.peek())
+        {
+          case 0x07: size = 0x07 + 4;break;
+          case 0x09: size = 0x09 + 4;break;
+          case 0x0B: size = 0x0B + 4;break;
+        }
         //int size = 20;
         byte readData[size];
-        int counter = 0;
-    
-        while(Serial.peek() != 0xFF && Serial.peek() != 0xFE && counter < size)
+
+        for(int i = 0, i < size, i++)
         {
-          readData[counter++] = Serial.read();        
+          readData[i] = Serial.read();        
         }
-        scooterData.newData(readData);
-        display.update(&scooterData);
+
+        if(calculateChecksum(readData) == readData[size-2] + readData[size-1] * 256)
+        {
+          scooterData.newData(readData);
+        }
+
+        // check to set speed = 30
+        if(scooterData.throttle_ == 100 && scooterData.break_ == 100 && scooterData.speed_ == 0)
+        {
+          if(changeSpeedTimer > 0)
+          {
+            if(millis()-changeSpeedTimer > changeSpeedTime)
+            {
+              if(maxSpeed)
+              {
+                maxSpeed = false;
+                changeSpeedTime = unlockSpeedTime;
+                byte buf[10]={0x55, 0xAA, 0x04, 0x22, 0x01, 0xF2 ,0xF8 ,0x01, 0xED, 0xFD};
+                sendData(buf,10);
+              }
+              else
+              {
+                maxSpeed = true;
+                // set time for reset
+                changeSpeedTime = resetSpeedTime;
+                byte buf[10]={0x55, 0xAA, 0x04, 0x22, 0x01, 0xF2, 0xF3, 0x02, 0xF1, 0xFD};
+                sendData(buf,10);
+              }
+              scooterData.unlockedSpeed_ = maxSpeed;
+            }
+          }
+          else
+          {
+            changeSpeedTimer = millis();
+          }
+        }
+        else
+        {
+          changeSpeedTimer = 0;
+        }
+        // check to change display mode
+        if(scooterData.throttle_ == 100 && scooterData.break_ < 10 && scooterData.speed_ == 0)
+        {
+          if(changeModeTimer > 0)
+          {
+            if(millis()-changeModeTimer > changeModeTime)
+            {
+              display.changeMode();
+            }
+          }
+          else
+          {
+            changeModeTimer = millis();
+          }
+        }
+        else
+        {
+          changeModeTimer = 0;
+        }
       }
     }
+    display.update(&scooterData);
   }
-  display.update(&scooterData);
-  //delay(2000);
 }
+
+void sendData(byte * data, int len)
+{
+  Serial.write()
+}
+
+uint16_t calculateChecksum(byte *data)
+{
+	uint8_t len = data[0] + 2;
+	uint16_t sum = 0;
+	for(int i = 0; i < len; i++)
+  {
+		sum += data[i];
+  }
+
+	sum ^= 0xFFFF;
+	return sum;
+}
+
+0000 0010 0001 0010
+1111 1111 1111 1111
+1111 1101 1110 1101

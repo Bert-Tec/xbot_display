@@ -20,6 +20,7 @@ class xbot_display_data
     int break_;
     bool eco_;
     bool light_;
+    bool unlockedSpeed_;
 
   private:
 };

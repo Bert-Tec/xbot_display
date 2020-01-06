@@ -1,14 +1,18 @@
 General:
-55 AA (Start of message) xx (length) xx (type) xx (command) xxxxxx xx (checksum1)  xx (checksum2)  
+55 AA (Start of message) xx (length) xx (type) xx (command) xxxxxx xx (checksum2)  xx (checksum1)  
 Length = command to end (without checksum)
+xx = unknown
 --------------------------------------------------------------------------------
 
-55 AA 07 25 60 xx xx throttle break xx xx ck1 ck2
+55 AA 07 25 60 xx xx throttle break xx xx ck2 ck1
 
-55 AA 09 27 63 xx xx throttle break xx xx xx xx ck1 ck2
+55 AA 09 27 63 xx xx throttle break xx xx xx xx ck2 ck1
 
-55 AA 0b 28 6d xx ECO batteryPoints light xx speed2 speed1 xx(?beep request) xx Battery% ck1 ck2
+55 AA 0b 28 6d xx ECO batteryPoints light xx speed2 speed1 xx(?beep request) xx Battery% ck2 ck1
 
+55 AA 04 22 01 xx maxWeehlspeed2 maxWeehlspeed1 ck2 ck1
+55 AA 04 22 01 F2 F3 02 F1 FD --> 755 rpm = 30.60 kmh 
+55 aa 04 22 01 F2 F8 01 ED FD --> 504 rpm = 20.43 kmh 
 
 ?????????????????????
 
