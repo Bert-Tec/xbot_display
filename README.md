@@ -8,6 +8,11 @@ For use of ESP-01 please enable it in the xbot_display.ino file, because of cust
 ![V1](/img/v1_1.jpg)
 ![V1](/img/v1_3.jpg)
 
+3D printed spacer which also puts the dashboard up, so that it looks good. And so you can secure the spacer with the screws of the dashboard(you'll need new M2x12 screws!):
+![V2](/img/v2_1.jpg)
+![V2](/img/v2_2.jpg)
+
+
 <h3>Dependencies (Arduino libraries):</h3>
 <ul>
 <li>Adafruit_GFX</li>
