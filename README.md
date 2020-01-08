@@ -20,7 +20,7 @@ For use of ESP-01 please enable it in the xbot_display.ino file, because of cust
 <li>1.3"(0.96"works also) OLED display (Yellow/Blue or White)</li>
 <li>Arduino pro mini 5V OR ESP-01(s) AND 5V to 3.3V converter</li>
 <li>Cables, isolation tape and a small resistor (like 220R)</li>
-<li>3D printed spacer(see 3D folder, will be improved soon) or mod a housing on your own</li>
+<li>3D printed spacer(see 3D folder, you'll need 3 new M2x12 screws to secure it well) or mod a housing on your own</li>
 <li>optional some hot glue to hold stuff in place</li>
 </ul>
 
