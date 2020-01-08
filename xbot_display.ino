@@ -10,7 +10,7 @@ unsigned long resetSpeedTime = 2000;
 unsigned long changeSpeedTimer = 0;
 unsigned long changeSpeedTime = unlockSpeedTime;
 unsigned long changeModeTimer = 0;
-unsigned long changeModeTime = 1000;
+unsigned long changeModeTime = 750;
 
 bool maxSpeed = false;
 
@@ -56,6 +56,7 @@ void loop()
         if(calculateChecksum(readData) == readData[size-2] + readData[size-1] * 256)
         {
           scooterData.newData(readData);
+          display.update(&scooterData);
         }
 
         // check to set speed = 30
@@ -81,6 +82,8 @@ void loop()
                 sendData(buf,10);
               }
               scooterData.unlockedSpeed_ = maxSpeed;
+              display.update(&scooterData);
+              changeSpeedTimer = 0;
             }
           }
           else
@@ -100,6 +103,8 @@ void loop()
             if(millis()-changeModeTimer > changeModeTime)
             {
               display.changeMode();
+              display.update(&scooterData);
+              changeModeTimer = 0;
             }
           }
           else
@@ -113,7 +118,6 @@ void loop()
         }
       }
     }
-    display.update(&scooterData);
   }
 }
 
