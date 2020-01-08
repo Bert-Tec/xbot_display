@@ -30,7 +30,7 @@ You need to solder three wires to the dashboards lower pins. Power(5V) to the + 
 <br>
 Then connect Arduino/ESP(you need a power converter from 5V to 3.3V for ESP) and Display to power and ground. 
 <br>
-Then connect serial line to RX pin of Arduino/ESP.
+Then connect serial line to RX pin of Arduino/ESP and using a resistor (for best work a diode) to TX.
 <br>
 Then connect I2C cables to OLED and I2C pins(SDA,SCL) of Arduino or to pin 0 and 2 of ESP.
 <br>
@@ -40,10 +40,10 @@ Now turn on and test it.
 The display and Arduino/ESP only gets power when the scooter is turned on.
 <br>
 You can switch to max. speed of 30 kmh by holding break and throttle for 7 seconds and at speed of 0. For reset hold break and throttle for 2 seconds and at speed of 0.
-There are three different display mods at the moment. You can switch between them by pressing full throttle for 1 second at speed of 0:
+There are three different display mods at the moment. You can switch between them by pressing full throttle for 0.75 second at speed of 0:
 
 <ul>
-<li>Home (Displays throttle and break values in % on top left, Battery % in top right, speed in km?h in the center, left point is eco mode on/off right point is light on/off)</li>
+<li>Home (Displays throttle and break values in % on top left, Battery % in top right, speed in km/h in the center, left point is eco mode on/off right point is light on/off and the middle is 30km/h mode on/off)</li>
 <li>Throttle overview (Here you can test and visualize throttle and break)</li>
 <li>OFF (Displays blank screen)</li>
 </ul>
