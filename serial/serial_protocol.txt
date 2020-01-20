@@ -34,10 +34,12 @@ set light on/off
 55 AA 04 22 01 F0 00 00 E8 FE
 
 two different messages, beginns with 55 AA 34 11 33 or 55 AA 34 11 33 28!!!
-55 AA 34 11 33 00 D3 52 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 BA 0E 00 00 00 00 00 00 80 FD 
-55 AA 34 11 33 t3 t2 t1 xx xx xx xx xx xx xx xx xx xx xx xx tx ty tz xxxxxx
+55 AA 34 11 33 00 93 6B 00 00 00 00 00 00 00 00 00 00 00 00 00 00 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 93 0E 18 00 00 00 00 00 BF FD
+55 AA 34 11 33 t3 t2 t1 xx xx xx xx xx xx xx xx xx xx xx xx tx ty tz xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx v2 v1 c2 c1 xx xx xx xx ck2 ck1
 t1-3 = total time in s
 tx-tz = actual time in s
+v1-2 = /100 = voltage in V
+c1-2 = /100 = current in A
 
 55 AA 34 11 33 28 78 80 00 00 00 00 7D 02 03 00 00 00 00 00 00 00 3B 00 00 00 00 00 00 00 00 00 00 00 00 00 6F 41 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 D4 52 D4 FB 
 55 AA 34 11 33 xx xx xx xx xx xx m4 m3 m2 m1 xx xx xx xx xx xx xx BB xx xx xx xx xx xx xx xx xx xx xx o4 o3 o2 o1 xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx t3 t2 t1 ck2 ck1
@@ -172,10 +174,13 @@ mostly while check data in app
 
 two different messages!!!
 
-55 AA 34 11 33 t3 t2 t1 xx xx xx xx xx xx xx xx xx xx xx xx tx ty tz xxxxxx
+55 AA 34 11 33 t3 t2 t1 xx xx xx xx xx xx xx xx xx xx xx xx tx ty tz xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx v2 v1 c2 c1 xx xx xx xx ck2 ck1
 t1-3 = total time in s
 tx-tz = actual time in s
+v1-2 = /100 = voltage in V
+c1-2 = /100 = current in A
 
+55 AA 34 11 33 00 93 6B 00 00 00 00 00 00 00 00 00 00 00 00 00 00 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 93 0E 18 00 00 00 00 00 BF FD
 55 AA 34 11 33 00 D3 52 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 BA 0E 00 00 00 00 00 00 80 FD 
 55 AA 34 11 33 00 D5 52 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 BA 0E 01 00 00 00 00 00 7B FD 
 55 AA 34 11 33 00 D4 52 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1B 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 BA 0E 01 00 00 00 00 00 7D FD
