@@ -63,3 +63,7 @@ There are three different display mods at the moment. You can switch between the
 <h1>Disclaimer</h1>
 Use on your own risk.
 Not street legal in Germany!!!
+
+<h3>Protocol informations:</h3>
+
+![Serial](/serial/serial_protocol.txt)
